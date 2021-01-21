@@ -21,10 +21,24 @@
         "body": [
             "package main",
             "",
+            "import \"os\"",
+            "",
             "func main() {}",
             "",
-            "func solve() {}",
+            "func solve(dst io.Writer, src io.Reader) {}",
         ],
         "description": "Snippet for function that solves a problem"
-    }
+    },
+    "cmp": {
+        "scope": "go",
+        "prefix": "cmp",
+        "body": [
+            "actual := new(strings.Builder)",
+            "solve(actual, strings.NewReader($1))",
+            "if actual.String() != test.expected {",
+            "\tt.Errorf(\"got %v, but expected %v\", actual, test.expected)",
+            "}",
+        ],
+        "description": "Snippet for statements comparing actual and expected ones"
+    },
 }
