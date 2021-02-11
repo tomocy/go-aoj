@@ -49,7 +49,7 @@ func (s *stack) push(v int) {
 }
 
 func (s *stack) pop() int {
-	if len((*s)) == 0 {
+	if len(*s) == 0 {
 		return 0
 	}
 
